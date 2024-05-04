@@ -14,11 +14,11 @@ def chatbot_response(user_input):
 
 st.title("Chatbot")
 user_input = st.text_input("You:")
-response = chatbot_response(user_input)
-if response:
-    st.text_area("Chatbot:", response)
-else:
+if user_input == "" :
     st.text("Waiting for user input...")
+else:
+    response = chatbot_response(user_input)
+    st.text_area("Chatbot:", response)
 
 if __name__ == "__main__":
     st.write("")
